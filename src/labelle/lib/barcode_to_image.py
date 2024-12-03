@@ -14,6 +14,8 @@ from labelle.lib.barcode_writer import BinaryString
 
 
 def _mm2px(mm: float, dpi: float = 25.4) -> float:
+    # ST: Hacked to not do unneccesary float math where dpi is hard-coded.
+    return mm
     return (mm * dpi) / 25.4
 
 
@@ -56,9 +58,12 @@ def convert_binary_string_to_barcode_image(
 
     line: A string of 0s and 1s representing the barcode.
     """
-    module_width = 2
+    module_width = 5
     vertical_margin = 8
     dpi = 25.4
+
+    # ST: Override quiet_zone for testing (use int for whole-pixel drawing)
+    quiet_zone = 3
 
     width, height = _calculate_size(
         modules_per_line=len(line),
@@ -107,7 +112,7 @@ def _paint_module(
     size = (
         (_mm2px(xpos, dpi), _mm2px(ypos, dpi)),
         (
-            _mm2px(xpos + width, dpi),
+            _mm2px(xpos + width, dpi) - 0.01,   # ST HACK
             _mm2px(ypos + module_height, dpi),
         ),
     )

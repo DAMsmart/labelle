@@ -31,6 +31,46 @@
             "justMyCode": false,
         },
         {
+            "name": "CLI (Printer); --sample-pattern 320",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "labelle.cli.cli",
+            "args": [
+                "--output=printer",
+                "--verbose",
+                // "--tape-size-mm=12",
+                // "hi",
+                "--sample-pattern", "320"
+            ],
+            "justMyCode": false,
+        },
+        {
+            "name": "CLI (Printer); --barcode-with-text abc123 --tape-size-mm 25",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "labelle.cli.cli",
+            "args": [
+                "--output=printer",
+                "--verbose",
+                "--tape-size-mm=25",
+                "--barcode-with-text", "abc123"
+            ],
+            "justMyCode": false,
+        },
+        {
+            "name": "CLI (Printer); --barcode-with-text abc123 --tape-size-mm 42",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "labelle.cli.cli",
+            "args": [
+                "--output=printer",
+                "--verbose",
+                "--tape-size-mm=42",
+                "--barcode-with-text", "abc123"
+            ],
+            "justMyCode": false,
+        },
+        {
             "name": "GUI",
             "type": "debugpy",
             "request": "launch",

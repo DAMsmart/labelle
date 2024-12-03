@@ -46,6 +46,7 @@ SUPPORTED_PRODUCTS = {
     0x1007: f"LabelManager Wireless PnP (no mode switch) {UNCONFIRMED_MESSAGE}",
     0x1008: f"LabelManager Wireless PnP (mode switch) {UNCONFIRMED_MESSAGE}",
     0x1009: f"MobileLabeler {UNCONFIRMED_MESSAGE}",
+    0x0023: f"DS 450 {UNCONFIRMED_MESSAGE}",
 }
 DEV_VENDOR = 0x0922
 

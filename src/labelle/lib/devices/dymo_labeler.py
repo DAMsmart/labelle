@@ -77,7 +77,7 @@ class DymoLabelerFunctions:
         self._devin = devin
         self._synwait = synwait
 
-    @classmethod
+    @classmethod    # Shouldn't this be a @staticmethod?
     def _max_bytes_per_line(cls, tape_size_mm: int) -> int:
         return int(8 * tape_size_mm / 12)
 
@@ -240,7 +240,7 @@ class DymoLabeler:
 
     LABELER_DISTANCE_BETWEEN_PRINT_HEAD_AND_CUTTER_MM = 8.1
     LABELER_PRINT_HEAD_HEIGHT_MM = 8.2
-    SUPPORTED_TAPE_SIZES_MM = (19, 12, 9, 6)
+    SUPPORTED_TAPE_SIZES_MM = (42, 25, 19, 12, 9, 6)
     DEFAULT_TAPE_SIZE_MM = 12
 
     def __init__(
